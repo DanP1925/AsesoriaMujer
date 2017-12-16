@@ -18,6 +18,7 @@ class CreateOrganizacionsTable extends Migration
             $table->string('titulo',250);
             $table->string('ubicacion',250);
             $table->string('telefono',20);
+            $table->string('correo',250);
             $table->string('encargado',150);
             $table->text('descripcion');
             $table->time('comienzoAtencion');
