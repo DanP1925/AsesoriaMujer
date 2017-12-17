@@ -3,7 +3,7 @@
     <i class="material-icons">menu</i>
   </a>
   <div class="container">
-    <div class="nav-wrapper" style="display: flex; align-items: center">
+    <div class="nav-wrapper" style="display: flex; align-items: center; justify-content: space-between">
       <a class="truncate" style="text-transform: uppercase;font-weight: bold;">
         @yield('title')
       </a>

@@ -80,7 +80,7 @@
                                 <i class="material-icons purple-text">rate_review</i>
                                 <span class="data-value">
                                     {{$organizacion->promedioResena()}}
-                                    <span class="rateYo-rating" data-rating="{{$organizacion->promedioResena()}}"></span>
+                                    <span class="rateYo-rating" data-rating="{{$organizacion->promedioResena()}}" data-rateyo-read-only="true"></span>
                                 </span>
                             </li>
                         </ul>

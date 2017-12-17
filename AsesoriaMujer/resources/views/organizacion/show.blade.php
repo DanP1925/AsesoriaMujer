@@ -24,7 +24,7 @@
   <p>
     <div class="line">
       <span>{{$organizacion->nivel}}</span>
-      <span class="rateYo-rating" data-rating="{{$organizacion->nivel}}"></span>
+      <span class="rateYo-rating" data-rating="{{$organizacion->nivel}}" data-rateyo-read-only="true"></span>
     </div>
   </p>
   <p>{{$organizacion->descripcion}}</p>
@@ -72,7 +72,7 @@
     <p class="resena-container">
       <div class="line">
         <span>{{$resena->nivel}}</span>
-        <span class="rateYo-rating" data-rating="{{$resena->nivel}}"></span>
+        <span class="rateYo-rating" data-rating="{{$resena->nivel}}" data-rateyo-read-only="true"></span>
       </div>
       @if($resena->created_at)
         <div class="italic blue-grey-text line">
