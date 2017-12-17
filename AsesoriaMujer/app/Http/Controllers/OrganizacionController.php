@@ -16,7 +16,7 @@ class OrganizacionController extends Controller
     {
         $todasLasOrganizaciones = Organizacion::all();
         foreach($todasLasOrganizaciones as $organizacion){
-            $organizacion['nivel'] = $organizacion->promedioResena();
+            $organizacion->nivel = $organizacion->promedioResena();
             $organizacion->save();
         }
 

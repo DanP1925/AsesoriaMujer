@@ -19,8 +19,10 @@
 <div class="container">
   <p>
     <h5 class="bold purple-text">{{$servicio->titulo}}</h5>
+    <h6 class="grey-text">
+      {{$servicio->tipoAtencion()->get()->first()->nombre}}
+    </h6>
   </p>
-  <img src="{{asset('img/sample-1.jpg')}}" alt="" class="responsive-img">
   <p>
     <div class="line">
       <span>{{$servicio->nivel}}</span>
@@ -38,14 +40,12 @@
         </span>
       </div>
     @endif
-    @if($servicio->costo != 'NO APLICA')
-      <div class="line">
-        <i class="material-icons purple-text">attach_money</i>
-        <span class="data">
-          {{$servicio->costo}}.00
-        </span>
-      </div>
-    @endif
+    <div class="line">
+      <i class="material-icons purple-text">attach_money</i>
+      <span class="data">
+        {{$servicio->costo ? 'S/. '.$servicio->costo.'.00' : 'Gratuito'}}
+      </span>
+    </div>
     <div class="line">
       <i class="material-icons purple-text">schedule</i>
       <span class="data">
@@ -70,6 +70,24 @@
       <p>{{$resena->descripcion}}</p>
     </p>
   @endforeach
-  
+  <h6 class="bold purple-text">Déjanos tu opinión:</h6>
+  <p>
+    <form method="POST" action="/resenas">
+            {{ csrf_field() }}   
+      <div class="input-field">
+        <input type="number" id="nivel" name="nivel" placeholder="Puntaje" max="5" min="0" required>
+      </div>
+      <input type="hidden" name="servicio" value="{{$servicio->id}}">
+      <div class="input-field">
+        <textarea id="descripcion" name="descripcion" cols="30" rows="10" class="materialize-textarea" required></textarea>
+        <label for="descripcion">Comentario</label>
+      </div>
+      <div class="center-align">
+        <button class="btn waves-effect waves-light purple" type="submit" name="action">
+          Enviar
+        </button>
+      </div>
+    </form>
+  </p>
 </div>
 @endsection

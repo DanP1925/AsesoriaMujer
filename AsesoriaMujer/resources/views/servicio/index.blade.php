@@ -11,6 +11,10 @@
             margin-left: 10px;
             display: flex;
         }
+
+        .organization-data {
+            padding: 0 30px !important;
+        }
     </style>
 @endpush
 
@@ -22,12 +26,14 @@
         <div class="row">
             <div class="col s12">
                 <div class="input-field">
-                    <button type="submit">
-                        <i class="material-icons prefix">search</i>
-                    </button>
-                    <input type="text" id="search" name="busqueda">
-                    <label for="icon-prefix">Buscar ...</label>
+                    <label for="icon-prefix"><i class="material-icons prefix">search</i></label>
+                    <input type="text" id="search" name="busqueda" value="{{app('request')->input('busqueda')}}">
                 </div>
+            </div>
+            <div class="col s12 center-align">
+                <button class="waves-effect waves-light btn purple" type="submit">
+                    Buscar
+                </button>
             </div>
         </div>
     </form>
@@ -49,12 +55,7 @@
         @foreach ($servicios as $servicio)
             <div class="section">
                 <div class="row">
-                    <div class="col s3">
-                        <a href="{{url('/servicios/'.$servicio->id)}}">
-                            <img src="{{asset($servicio->imagen)}}" alt="" class="circle responsive-img">
-                        </a>
-                    </div>
-                    <div class="col s9">
+                    <div class="col s12">
                         <ul class="organization-data">
                             <li class="service-data-line">
                                 <i class="material-icons purple-text">business</i>
@@ -67,7 +68,7 @@
                             <li class="service-data-line">
                                 <i class="material-icons purple-text">attach_money</i>
                                 <span class="data-value">
-                                    {{$servicio->costo}}.00
+                                    {{$servicio->costo ? 'S/. '.$servicio->costo.'.00' : 'Gratuito'}}
                                 </span>
                             </li>
                             <li class="service-data-line">

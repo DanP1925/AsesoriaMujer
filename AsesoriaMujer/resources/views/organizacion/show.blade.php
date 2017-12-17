@@ -87,7 +87,7 @@
     <form method="POST" action="/resenas">
             {{ csrf_field() }}   
       <div class="input-field">
-        <input type="text" id="nivel" name="nivel" placeholder="Puntaje" max="5" min="0" required>
+        <input type="number" id="nivel" name="nivel" placeholder="Puntaje" max="5" min="0" required>
       </div>
       <div class="input-field">
         <select name="servicio" required>
