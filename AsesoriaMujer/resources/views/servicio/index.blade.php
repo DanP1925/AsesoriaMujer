@@ -1,7 +1,14 @@
-<h1>pagina de servicios</h1>
+<h1>servicios</h1>
+<ul>
 @foreach ($servicios as $servicio)
     <a href="/servicios/{{ $servicio->id}}">
-        <h4>{{ $servicio->titulo }}</h4>
-        <h4>{{ $servicio->promedioResena() }}</h4>
+    	{{ $servicio->titulo }}
     </a>
+    {{ $servicio->promedioResena() }}
+    {{ $servicio->descripcion }}
+    {{ $servicio->nivel }}
+    {{ $servicio->comienzoAtencion }}
+    {{ $servicio->finAtencion }}
+    {{ $servicio->costo }}
 @endforeach
+</ul>
