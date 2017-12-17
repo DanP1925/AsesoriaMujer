@@ -20,7 +20,7 @@
   <p>
     <h5 class="bold purple-text">{{$organizacion->titulo}}</h5>
   </p>
-  <img src="{{asset('img/sample-1.jpg')}}" alt="" class="responsive-img">
+  <img src="{{asset($organizacion->banner)}}" alt="" class="responsive-img">
   <p>
     <div class="line">
       <span>{{$organizacion->nivel}}</span>
