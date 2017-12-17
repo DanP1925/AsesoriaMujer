@@ -49,24 +49,28 @@
             <div class="section">
                 <div class="row">
                     <div class="col s3">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/d/dd/Greenkeepers_Organization_Logo_2015.png" alt="" class="circle responsive-img">
+                        <a href="{{url('/organizaciones/'.$organizacion->id)}}">
+                            <img src="{{asset($organizacion->imagen)}}" alt="" class="circle responsive-img">
+                        </a>
                     </div>
                     <div class="col s9">
                         <ul class="organization-data">
                             <li class="organization-data-line">
-                                <i class="material-icons">business</i>
+                                <i class="material-icons purple-text">business</i>
                                 <span class="data-value">
-                                    {{$organizacion->titulo}}
+                                    <a href="{{url('/organizaciones/'.$organizacion->id)}}" class="purple-text">
+                                        <strong>{{$organizacion->titulo}}</strong>
+                                    </a>
                                 </span>
                             </li>
                             <li class="organization-data-line">
-                                <i class="material-icons">local_phone</i>
+                                <i class="material-icons purple-text">local_phone</i>
                                 <span class="data-value">
                                     {{$organizacion->telefono}}
                                 </span>
                             </li>
                             <li class="organization-data-line">
-                                <i class="material-icons">place</i>
+                                <i class="material-icons purple-text">place</i>
                                 <span class="data-value">
                                     {{$organizacion->ubicacion}}
                                 </span>
@@ -79,4 +83,3 @@
         @endforeach
     </div>
  @endsection
- 
