@@ -33,14 +33,9 @@
                 Organizaciones
             </a>
         </li>
-        <li class="tab col s4">
-            <a class="purple-text text-lighten-2" href="#servicios">
+        <li class="tab col s4 disabled">
+            <a class="purple-text text-lighten-2" href="{{url('servicios')}}" onclick="javascript:window.location.href='{{url('servicios')}}'" style="cursor: pointer;">
                 Servicios
-            </a>
-        </li>
-        <li class="tab col s4">
-            <a class="purple-text text-lighten-2" href="#eventos">
-                Eventos
             </a>
         </li>
     </ul>

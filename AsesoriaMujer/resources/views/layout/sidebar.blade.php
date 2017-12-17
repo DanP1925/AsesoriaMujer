@@ -8,6 +8,7 @@
     </div>
   </li>
   <li><div class="divider"></div></li>
-  <li><a href="{{url('/')}}">Organizaciones</a></li>
+  <li><a href="{{url('/')}}">Home</a></li>
+  <li><a href="{{url('organizaciones')}}">Organizaciones</a></li>
   <li><a href="{{url('servicios')}}">Servicios</a></li>
 </ul>
