@@ -14,7 +14,7 @@ class ServicioController extends Controller
      */
     public function index()
     {
-        $servicios = Servicio::all();
+        $servicios = Servicio::simplePaginate(15);
 
         return view('servicio.index', compact('servicios'));
     }
@@ -48,7 +48,7 @@ class ServicioController extends Controller
      */
     public function show(Servicio $servicio)
     {
-        //
+        return view('servicio.show',compact('servicio'));
     }
 
     /**
