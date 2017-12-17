@@ -1,14 +1,84 @@
-<h1>servicios</h1>
-<ul>
-@foreach ($servicios as $servicio)
-    <a href="/servicios/{{ $servicio->id}}">
-    	{{ $servicio->titulo }}
-    </a>
-    {{ $servicio->promedioResena() }}
-    {{ $servicio->descripcion }}
-    {{ $servicio->nivel }}
-    {{ $servicio->comienzoAtencion }}
-    {{ $servicio->finAtencion }}
-    {{ $servicio->costo }}
-@endforeach
-</ul>
+@extends('layout.base')
+
+@push('stylesheets')
+    <style>
+        .service-data-line {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .data-value {
+            margin-left: 10px;
+            display: flex;
+        }
+    </style>
+@endpush
+
+@section('title', 'Servicios')
+
+@section('container')
+    <div class="row">
+        <div class="col s12">
+            <div class="input-field">
+                <i class="material-icons prefix">search</i>
+                <input type="text" id="search">
+                <label for="icon-prefix">Buscar ...</label>
+            </div>
+        </div>
+    </div>
+
+    <ul class="tabs">
+        <li class="tab col s4 disabled">
+            <a class="purple-text text-lighten-2" href="{{url('organizaciones')}}" onclick="javascript:window.location.href='{{url('organizaciones')}}'" style="cursor: pointer;">
+                Organizaciones
+            </a>
+        </li>
+        <li class="tab col s4">
+            <a class="active purple-text" href="#servicios">
+                Servicios
+            </a>
+        </li>
+    </ul>
+
+    <div id="servicios">
+        @foreach ($servicios as $servicio)
+            <div class="section">
+                <div class="row">
+                    <div class="col s3">
+                        <a href="{{url('/servicios/'.$servicio->id)}}">
+                            <img src="{{asset($servicio->imagen)}}" alt="" class="circle responsive-img">
+                        </a>
+                    </div>
+                    <div class="col s9">
+                        <ul class="organization-data">
+                            <li class="service-data-line">
+                                <i class="material-icons purple-text">business</i>
+                                <span class="data-value">
+                                    <a href="{{url('/servicios/'.$servicio->id)}}" class="purple-text bold">
+                                        {{$servicio->titulo}}
+                                    </a>
+                                </span>
+                            </li>
+                            <li class="service-data-line">
+                                <i class="material-icons purple-text">attach_money</i>
+                                <span class="data-value">
+                                    {{$servicio->costo}}.00
+                                </span>
+                            </li>
+                            <li class="service-data-line">
+                                <i class="material-icons purple-text">rate_review</i>
+                                <span class="data-value">
+                                    {{$servicio->promedioResena()}}
+                                    <span class="rateYo-rating" data-rating="{{$servicio->promedioResena()}}" data-rateyo-read-only="true"></span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="divider"></div>
+        @endforeach
+    </div>
+@endsection
+
+
