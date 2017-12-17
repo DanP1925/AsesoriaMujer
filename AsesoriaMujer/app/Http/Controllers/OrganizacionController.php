@@ -16,7 +16,7 @@ class OrganizacionController extends Controller
     {
         $organizaciones = Organizacion::all();
 
-        return view('organizacion.index', compact($organizaciones));
+        return view('organizacion.index', compact('organizaciones'));
     }
 
     /**
