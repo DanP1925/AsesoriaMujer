@@ -16,11 +16,17 @@ class Servicio extends Model
 
         if ($suma != 0){
             return $suma/count($resenas);
+        }else {
+            return 5;
         }
 
     }
 
     public function resenas() {
         return $this->hasMany('App\Resena', 'idServicio');
+    }
+
+    public function organizacion() {
+        return $this->belongsTo('App\Organizacion', 'idOrganizacion');
     }
 }
