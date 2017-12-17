@@ -20,12 +20,23 @@ class ServicioController extends Controller
             $servicio->save();
         }
 
-        $query = $request->query('busqueda');
+        $busqueda = $request->query('busqueda');
 
-        if (is_null($query)){
-            $servicios = Servicio::orderBy('nivel')->simplePaginate(5);
+        if (is_null($busqueda)){
+            $tipo = $request->query('tipo');
+            if (is_null($tipo)){
+                $servicios = Servicio::orderBy('nivel')->simplePaginate(5);
+            } else{
+                if ($tipo == 'psico') $tipoId=1;
+                else if ($tipo == 'legal') $tipoId=2;
+                else if ($tipo == 'psicoLegal') $tipoId=3;
+
+                $tipo_atencion = 
+
+                $servicios = Servicio::where([])->orderBy('nivel')->simplePaginate(5);
+            }
         } else{
-            $servicios = Servicio::where('titulo','like', '%' . $query . '%')->simplePaginate(5);
+                $servicios = Servicio::where('titulo','like', '%' . $busqueda . '%')->simplePaginate(5);
         }
 
         return view('servicio.index', compact('servicios'));
