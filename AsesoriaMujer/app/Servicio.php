@@ -19,4 +19,8 @@ class Servicio extends Model
         }
 
     }
+
+    public function resenas() {
+        return $this->hasMany('App\Resena', 'idServicio');
+    }
 }

@@ -17,6 +17,16 @@ class Organizacion extends Model
 
         if ($suma!=0){
             return $suma/count($servicios);
+        } else {
+            return 5;
         }
+    }
+
+    public function resenas() {
+        return $this->hasManyThrough('App\Resena', 'App\Servicio', 'idOrganizacion', 'idServicio');
+    }
+
+    public function servicios() {
+        return $this->hasMany('App\Servicio', 'idOrganizacion');
     }
 }

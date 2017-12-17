@@ -12,6 +12,7 @@
 
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
       <link rel="stylesheet" href="{{asset('css/app.css')}}">
       <style>
         .indicator {
@@ -33,9 +34,20 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
     <script>
       $(function(){
         $(".button-collapse.top-nav").sideNav();
+
+        $.each($('.rateYo-rating'), function(index, element) {
+          $(element).rateYo({
+              rating: $(element).data('rating'),
+              normalFill: '#F39C12',
+              starWidth: "20px",
+          });
+        });
+
+        $('select').material_select();
       });
     </script>
     @stack('scripts')

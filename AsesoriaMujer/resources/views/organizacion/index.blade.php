@@ -9,6 +9,7 @@
 
         .data-value {
             margin-left: 10px;
+            display: flex;
         }
     </style>
 @endpush
@@ -73,6 +74,13 @@
                                 <i class="material-icons purple-text">place</i>
                                 <span class="data-value">
                                     {{$organizacion->ubicacion}}
+                                </span>
+                            </li>
+                            <li class="organization-data-line">
+                                <i class="material-icons purple-text">rate_review</i>
+                                <span class="data-value">
+                                    {{$organizacion->promedioResena()}}
+                                    <span class="rateYo-rating" data-rating="{{$organizacion->promedioResena()}}"></span>
                                 </span>
                             </li>
                         </ul>
