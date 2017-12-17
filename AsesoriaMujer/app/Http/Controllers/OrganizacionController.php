@@ -14,6 +14,11 @@ class OrganizacionController extends Controller
      */
     public function index()
     {
+        $todasLasOrganizaciones = Organizacion::all();
+        foreach($todasLasOrganizaciones as $organizacion){
+            $organizacion['nivel'] = $organizacion->promedioResena();
+            $organizacion->save();
+        }
         $organizaciones = Organizacion::simplePaginate(5);
 
         return view('organizacion.index', compact('organizaciones'));

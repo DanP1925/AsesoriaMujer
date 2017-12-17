@@ -14,6 +14,12 @@ class ServicioController extends Controller
      */
     public function index()
     {
+        $todosLosServicios = Servicio::all();
+        foreach($todosLosServicios as $servicio){
+            $servicio['nivel'] = $servicio->promedioResena();
+            $servicio->save();
+        }
+
         $servicios = Servicio::simplePaginate(15);
 
         return view('servicio.index', compact('servicios'));

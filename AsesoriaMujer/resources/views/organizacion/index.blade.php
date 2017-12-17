@@ -5,6 +5,7 @@
     <a href="/organizaciones/{{ $organizacion->id}}">
         {{ $organizacion->titulo}}
     </a>
+    {{ $organizacion->promedioResena() }}
     {{ $organizacion->telefono}}
     {{ $organizacion->ubicacion}}
     </div>
