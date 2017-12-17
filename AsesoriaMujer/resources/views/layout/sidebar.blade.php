@@ -1,13 +1,11 @@
 <ul class="side-nav" id="nav-mobile">
   <li class="purple" style="padding-bottom: 20px;">
     <div class="user-view center-align">
-      <img src="{{asset('img/logo.png')}}" class="circle" style="margin: 0 auto; width: 80px; height: 80px">
-      <h5 class="white-text name bold">
-        AconsejaTEC
-      </h5>
+      <br>
+      <img src="{{asset('img/logo_text.png')}}" style="margin: 0 auto; max-width: 100%">
     </div>
   </li>
-  <li><a href="{{url('/')}}">Home</a></li>
-  <li><a href="{{url('organizaciones')}}">Organizaciones</a></li>
-  <li><a href="{{url('servicios')}}">Servicios</a></li>
+  <li><a class="bold" style="font-size: 16px !important;" href="{{url('/')}}">Home</a></li>
+  <li><a class="bold" style="font-size: 16px !important;" href="{{url('organizaciones')}}">Organizaciones</a></li>
+  <li><a class="bold" style="font-size: 16px !important;" href="{{url('servicios')}}">Servicios</a></li>
 </ul>
