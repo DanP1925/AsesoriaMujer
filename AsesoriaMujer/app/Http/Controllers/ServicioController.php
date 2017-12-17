@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Servicio;
+use DB;
 use Illuminate\Http\Request;
 
 class ServicioController extends Controller
@@ -29,11 +30,9 @@ class ServicioController extends Controller
             } else{
                 if ($tipo == 'psico') $tipoId=1;
                 else if ($tipo == 'legal') $tipoId=2;
-                else if ($tipo == 'psicoLegal') $tipoId=3;
 
-                $tipo_atencion = 
-
-                $servicios = Servicio::where([])->orderBy('nivel')->simplePaginate(5);
+                $servicios = DB::table('servicios')->join('servicio_tipo','servicios.id','=','servicio_tipo.idServicio')
+                                                    ->where('servicio_tipo.idTipo','=',$tipoId)->get();
             }
         } else{
                 $servicios = Servicio::where('titulo','like', '%' . $busqueda . '%')->simplePaginate(5);
