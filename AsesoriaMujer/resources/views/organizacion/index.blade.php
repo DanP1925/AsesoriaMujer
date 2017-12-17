@@ -1,4 +1,4 @@
- @extends('layout.base')
+@extends('layout.base')
 
 @push('stylesheets')
     <style>
@@ -13,9 +13,9 @@
     </style>
 @endpush
 
- @section('title', 'Organizaciones')
+@section('title', 'Organizaciones')
 
- @section('container')
+@section('container')
     <div class="row">
         <div class="col s12">
             <div class="input-field">
@@ -58,8 +58,8 @@
                             <li class="organization-data-line">
                                 <i class="material-icons purple-text">business</i>
                                 <span class="data-value">
-                                    <a href="{{url('/organizaciones/'.$organizacion->id)}}" class="purple-text">
-                                        <strong>{{$organizacion->titulo}}</strong>
+                                    <a href="{{url('/organizaciones/'.$organizacion->id)}}" class="purple-text bold">
+                                        {{$organizacion->titulo}}
                                     </a>
                                 </span>
                             </li>
@@ -82,4 +82,4 @@
             <div class="divider"></div>
         @endforeach
     </div>
- @endsection
+@endsection

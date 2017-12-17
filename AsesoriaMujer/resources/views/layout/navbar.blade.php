@@ -4,7 +4,7 @@
   </a>
   <div class="container">
     <div class="nav-wrapper">
-      <a class="page-title">
+      <a class="page-title" style="text-transform: uppercase;font-weight: bold;">
         @yield('title')
       </a>
     </div>
