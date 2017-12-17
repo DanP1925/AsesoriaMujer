@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTipoViolenciasTable extends Migration
+class TipoAtencion extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateTipoViolenciasTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_violencias', function (Blueprint $table) {
+         Schema::create('tipo_atencions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre',100);
-            $table->timestamps();
         });
     }
 
@@ -27,6 +26,6 @@ class CreateTipoViolenciasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_violencias');
+        //
     }
 }

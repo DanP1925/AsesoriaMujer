@@ -17,7 +17,7 @@ class ServicioTipo extends Migration
             $table->integer('idServicio')->unsigned();
             $table->foreign('idServicio')->references('id')->on('servicios');
             $table->integer('idTipo')->unsigned();
-            $table->foreign('idTipo')->references('id')->on('tipo_violencias');
+            $table->foreign('idTipo')->references('id')->on('tipo_atencions');
          });
     }
 

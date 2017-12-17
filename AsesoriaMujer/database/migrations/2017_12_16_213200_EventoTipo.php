@@ -17,7 +17,7 @@ class EventoTipo extends Migration
             $table->integer('idEvento')->unsigned();
             $table->foreign('idEvento')->references('id')->on('eventos');
             $table->integer('idTipo')->unsigned();
-            $table->foreign('idTipo')->references('id')->on('tipo_violencias');
+            $table->foreign('idTipo')->references('id')->on('tipo_atencions');
          });
  
     }
