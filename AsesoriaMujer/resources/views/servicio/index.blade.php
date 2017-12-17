@@ -26,12 +26,14 @@
         <div class="row">
             <div class="col s12">
                 <div class="input-field">
-                    <button type="submit">
-                        <i class="material-icons prefix">search</i>
-                    </button>
-                    <input type="text" id="search" name="busqueda">
-                    <label for="icon-prefix">Buscar ...</label>
+                    <label for="icon-prefix"><i class="material-icons prefix">search</i></label>
+                    <input type="text" id="search" name="busqueda" value="{{app('request')->input('busqueda')}}">
                 </div>
+            </div>
+            <div class="col s12 center-align">
+                <button class="waves-effect waves-light btn purple" type="submit">
+                    Buscar
+                </button>
             </div>
         </div>
     </form>
