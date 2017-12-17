@@ -29,4 +29,8 @@ class Servicio extends Model
     public function organizacion() {
         return $this->belongsTo('App\Organizacion', 'idOrganizacion');
     }
+
+    public function tipoAtencion() {
+        return $this->belongsToMany('App\TipoAtencion', 'servicio_tipo', 'idServicio', 'idTipo');
+    }
 }
