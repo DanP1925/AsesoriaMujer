@@ -35,7 +35,7 @@ class ServicioController extends Controller
                                                     ->where('servicio_tipo.idTipo','=',$tipoId)->get();
             }
         } else{
-                $servicios = Servicio::where('titulo','like', '%' . $busqueda . '%')->simplePaginate(5);
+                $servicios = Servicio::where('titulo','like', '%' . $busqueda . '%')->orderBy('nivel')->simplePaginate(5);
         }
 
         return view('servicio.index', compact('servicios'));
