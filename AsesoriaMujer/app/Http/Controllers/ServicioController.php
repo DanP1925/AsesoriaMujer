@@ -16,7 +16,7 @@ class ServicioController extends Controller
     {
         $todosLosServicios = Servicio::all();
         foreach($todosLosServicios as $servicio){
-            $servicio['nivel'] = $servicio->promedioResena();
+            $servicio->nivel = $servicio->promedioResena();
             $servicio->save();
         }
 

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Resena;
+use App\Servicio;
+use App\Organizacion;
 use Illuminate\Http\Request;
 
 class ResenaController extends Controller
@@ -48,6 +50,15 @@ class ResenaController extends Controller
         $resena->titulo = 'Titulo';
 
         $resena->save();
+
+        $servicio = Servicio::find($resena->idServicio);
+        $servicio->nivel = $servicio->promedioResenas();
+        $servicio->save();
+
+        $organizacion = $servicio->organizacion()->get()->first();
+        $organizacion->nivel = $organizacion->promedioResenas();
+        $organizacion->save();
+
         return redirect()->action('ServicioController@show',['id'=>$resena->idServicio]);
     }
 
