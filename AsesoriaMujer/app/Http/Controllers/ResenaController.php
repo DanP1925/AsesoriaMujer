@@ -35,7 +35,20 @@ class ResenaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate(request(),[
+            'nivel' => 'required',
+            'servicio' => 'required',
+            'descripcion' => 'required',
+        ]);
+
+        $resena = new Resena;
+        $resena->nivel = $request->nivel;
+        $resena->descripcion = $request->descripcion;
+        $resena->idServicio = $request->servicio;
+        $resena->titulo = 'Titulo';
+
+        $resena->save();
+        return redirect()->action('ServicioController@show',['id'=>$resena->idServicio]);
     }
 
     /**
@@ -46,7 +59,6 @@ class ResenaController extends Controller
      */
     public function show(Resena $resena)
     {
-        //
     }
 
     /**

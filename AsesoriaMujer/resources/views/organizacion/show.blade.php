@@ -84,7 +84,8 @@
   @endforeach
   <h6 class="bold purple-text">Déjanos tu opinión:</h6>
   <p>
-    <form action="">
+    <form method="POST" action="/resenas">
+            {{ csrf_field() }}   
       <div class="input-field">
         <input type="number" name="nivel" placeholder="Puntaje" max="5" min="0" required>
       </div>
