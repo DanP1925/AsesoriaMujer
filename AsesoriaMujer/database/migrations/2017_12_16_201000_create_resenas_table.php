@@ -18,9 +18,9 @@ class CreateResenasTable extends Migration
             $table->string('titulo',250);
             $table->integer('nivel');
             $table->text('descripcion');
-            $table->integer('idOrganizacion')->unsigned();
+            $table->integer('idServicio')->unsigned();
             $table->timestamps();
-            $table->foreign('idOrganizacion')->references('id')->on('organizacions');
+            $table->foreign('idServicio')->references('id')->on('servicios');
         });
     }
 
