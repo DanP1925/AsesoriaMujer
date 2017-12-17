@@ -1,4 +1,6 @@
  <h1>Organizaciones</h1>
-@foreach ($organizaciones as $organizacion){
-    <h4>{{ $organizacion->titulo}}</h4>
+<ul>
+@foreach ($organizaciones as $organizacion)
+    <li>{{ $organizacion->titulo}}</li>
 @endforeach
+</ul>
