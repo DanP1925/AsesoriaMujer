@@ -86,7 +86,7 @@
   <p>
     <form action="">
       <div class="input-field">
-        <input type="number" name="nivel" placeholder="Puntaje" max="5" min="0" required>
+        <input type="text" id="nivel" name="nivel" placeholder="Puntaje" max="5" min="0" required>
       </div>
       <div class="input-field">
         <select name="servicio" required>
@@ -97,7 +97,8 @@
         </select>
       </div>
       <div class="input-field">
-        <textarea name="descripcion" cols="30" rows="10" class="materialize-textarea" required></textarea>
+        <textarea id="descripcion" name="descripcion" cols="30" rows="10" class="materialize-textarea" required></textarea>
+        <label for="descripcion">Comentario</label>
       </div>
       <div class="center-align">
         <button class="btn waves-effect waves-light purple" type="submit" name="action">
