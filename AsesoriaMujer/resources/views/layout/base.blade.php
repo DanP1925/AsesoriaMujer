@@ -42,7 +42,6 @@
         $.each($('.rateYo-rating'), function(index, element) {
           $(element).rateYo({
               rating: $(element).data('rating'),
-              normalFill: '#F39C12',
               starWidth: "20px",
           });
         });
