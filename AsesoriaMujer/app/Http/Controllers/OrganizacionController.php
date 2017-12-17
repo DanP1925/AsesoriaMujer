@@ -14,7 +14,7 @@ class OrganizacionController extends Controller
      */
     public function index()
     {
-        $organizaciones = Organizacion::all();
+        $organizaciones = Organizacion::simplePaginate(5);
 
         return view('organizacion.index', compact('organizaciones'));
     }
@@ -48,7 +48,7 @@ class OrganizacionController extends Controller
      */
     public function show(Organizacion $organizacion)
     {
-        return view('organizacion.show', compact('organizacion'));
+        return view('organizacion.show',compact('organizacion'));
     }
 
     /**
