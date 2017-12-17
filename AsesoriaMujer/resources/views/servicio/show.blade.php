@@ -70,6 +70,24 @@
       <p>{{$resena->descripcion}}</p>
     </p>
   @endforeach
-  
+  <h6 class="bold purple-text">Déjanos tu opinión:</h6>
+  <p>
+    <form method="POST" action="/resenas">
+            {{ csrf_field() }}   
+      <div class="input-field">
+        <input type="number" id="nivel" name="nivel" placeholder="Puntaje" max="5" min="0" required>
+      </div>
+      <input type="hidden" name="servicio" value="{{$servicio->id}}">
+      <div class="input-field">
+        <textarea id="descripcion" name="descripcion" cols="30" rows="10" class="materialize-textarea" required></textarea>
+        <label for="descripcion">Comentario</label>
+      </div>
+      <div class="center-align">
+        <button class="btn waves-effect waves-light purple" type="submit" name="action">
+          Enviar
+        </button>
+      </div>
+    </form>
+  </p>
 </div>
 @endsection
